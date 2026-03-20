@@ -36,7 +36,7 @@ header .container { display: flex; align-items: center; gap: 1.5rem; }
 nav { display: flex; gap: 1.25rem; }
 nav a { color: rgba(255,255,255,.88); text-decoration: none; font-size: .88rem; font-weight: 500; white-space: nowrap; }
 nav a:hover { color: #fff; }
-.header-cta { background: var(--btn-bg); color: var(--btn-text); padding: .45rem 1rem; border-radius: var(--radius); text-decoration: none; font-weight: 700; font-size: .88rem; white-space: nowrap; border: 2px solid var(--btn-border); transition: opacity .15s; flex-shrink: 0; }
+.header-cta { background: #fff; color: var(--brand); padding: .45rem 1rem; border-radius: var(--radius); text-decoration: none; font-weight: 700; font-size: .88rem; white-space: nowrap; border: 2px solid transparent; transition: opacity .15s; flex-shrink: 0; }
 .header-cta:hover { opacity: .88; }
 
 /* ── Buttons ── */
@@ -120,6 +120,18 @@ details[open] .faq-q::after { content: '−'; }
 .breadcrumb { font-size: .83rem; color: rgba(255,255,255,.6); margin-bottom: .9rem; }
 .breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
 .breadcrumb span::before { content: ' › '; }
+
+/* ── High-contrast buttons on brand-coloured backgrounds ── */
+/* Hero bg = brand, CTA section bg = brand → buttons must be white */
+.hero .btn-primary,
+.cta-section .btn-primary {
+  background: #fff;
+  color: var(--brand);
+  border-color: transparent;
+  box-shadow: 0 4px 18px rgba(0,0,0,.22);
+}
+.hero .btn-primary:hover,
+.cta-section .btn-primary:hover { opacity: .93; color: var(--brand); }
 
 /* ── Sticky mobile bar ── */
 .sticky-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--brand); padding: .8rem 1.2rem; text-align: center; z-index: 200; box-shadow: 0 -2px 10px rgba(0,0,0,.2); }
