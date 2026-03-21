@@ -15,7 +15,7 @@
   "@context": "https://schema.org",
   "@type": "MovingCompany",
   "name": "Man With a Van Leeds",
-  "description": "Man with a Van in Horsforth, West Yorkshire",
+  "description": "Man with a Van in Horsforth. a sought-after suburban village north-west of Leeds, popular with families and commuters",
   "url": "https://www.manwithavanleeds.co.uk/man-with-a-van-horsforth/",
   "address": {
     "@type": "PostalAddress",
@@ -27,7 +27,44 @@
     "@type": "City",
     "name": "Horsforth"
   },
-  "priceRange": "££"
+  "priceRange": "££",
+  "telephone": "+(44) 20 3318 4720",
+  "email": "contact@transport-executive.co.uk",
+  "image": "https://transport-executive.co.uk/wp-content/uploads/2024/06/van.fw_1-700x534-min-500x380-1-1.webp",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "9.2",
+    "bestRating": "10",
+    "worstRating": "1",
+    "ratingCount": "3487",
+    "reviewCount": "3487"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "09:00",
+      "closes": "12:00"
+    }
+  ]
 }</script>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -76,7 +113,22 @@
   ]
 }</script>
 </head>
-<body>
+<body data-city="horsforth">
+
+<script>
+(function(){
+  var prefix = "mwv";
+  var citySlug = document.body.getAttribute('data-city') || 'unknown';
+  var links = document.querySelectorAll('a[href*="anyvan.com"]');
+  links.forEach(function(a){
+    a.addEventListener('click', function(){
+      var url = new URL(a.href);
+      url.searchParams.set('subid', prefix + '_' + citySlug + '_' + Date.now());
+      a.href = url.toString();
+    }, {once: true});
+  });
+})();
+</script>
 
 <header>
   <div class="container">
