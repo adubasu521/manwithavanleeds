@@ -119,21 +119,20 @@
     gtag('config', 'G-HK9Z2HPGRS');
   </script>
 </head>
-<body data-city="rawdon">
+<body data-city="leeds">
 
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   var prefix = "mwv";
   var citySlug = document.body.getAttribute('data-city') || 'unknown';
-  var links = document.querySelectorAll('a[href*="anyvan.com"]');
-  links.forEach(function(a){
+  document.querySelectorAll('a[href*="anyvan.com"]').forEach(function(a){
     a.addEventListener('click', function(){
       var url = new URL(a.href);
       url.searchParams.set('subid', prefix + '_' + citySlug + '_' + Date.now());
       a.href = url.toString();
-    }, {once: true});
+    });
   });
-})();
+});
 </script>
 
 <header>
