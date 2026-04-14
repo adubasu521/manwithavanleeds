@@ -1,0 +1,73 @@
+export const siteConfig = {
+  name: 'Man With A Van Leeds',
+  url: 'https://manwithavanleeds.co.uk',
+  phone: '+44 20 3318 4720',
+  phoneDisplay: '020 3318 4720',
+  phoneTel: '+442033184720',
+  email: 'contact@manwithavanleeds.co.uk',
+  address: {
+    city: 'Leeds',
+    region: 'West Yorkshire',
+    postcode: 'LS1',
+    country: 'GB',
+  },
+  geo: {
+    latitude: 53.8008,
+    longitude: -1.5491,
+  },
+  serviceRadius: 'Leeds and surrounding West Yorkshire / North Yorkshire',
+  hours: [
+    { day: 'Monday', hours: '7:00 AM - 7:00 PM' },
+    { day: 'Tuesday', hours: '7:00 AM - 7:00 PM' },
+    { day: 'Wednesday', hours: '7:00 AM - 7:00 PM' },
+    { day: 'Thursday', hours: '7:00 AM - 7:00 PM' },
+    { day: 'Friday', hours: '7:00 AM - 7:00 PM' },
+    { day: 'Saturday', hours: '7:00 AM - 7:00 PM' },
+    { day: 'Sunday', hours: '7:00 AM - 7:00 PM' },
+  ],
+  openingHoursSchema: 'Mo-Su 07:00-19:00',
+  stats: {
+    reviews: '500+',
+    movesCompleted: '3,000+',
+    averageRating: 4.9,
+    yearsActive: 8,
+  },
+  social: {
+    google: '#',
+    trustpilot: '#',
+    facebook: '#',
+  },
+  certifications: [
+    'Fully Insured — Goods-in-Transit & Public Liability',
+    'CRB-Checked Drivers',
+    'Price Match Guarantee',
+  ],
+  usps: [
+    { title: 'Fixed-Price Quotes', description: 'You know the full cost before we arrive. No hourly meter, no surprise charges.' },
+    { title: 'Fully Insured', description: 'Goods-in-transit and public liability insurance on every job. Your belongings are covered.' },
+    { title: '7 Days a Week', description: 'Available every day including weekends and bank holidays.' },
+    { title: 'Same-Day Available', description: 'Most local Leeds jobs can be booked for the same day or next day.' },
+    { title: 'Price Match Guarantee', description: 'We match any comparable like-for-like written quote.' },
+    { title: 'Local Leeds Knowledge', description: 'We know every part of Leeds. No delays, no confusion about access or parking.' },
+  ],
+  vanFleet: [
+    {
+      name: 'Long Wheelbase (LWB) Van',
+      loadSpace: '3.5m long x 1.7m wide x 1.8m high (~10 cubic metres)',
+      bestFor: 'Studio flats, 1-bed moves, single-room collections, small furniture deliveries',
+      pricing: { selfLoading: '£20/h', driverLoading: '£25/h', twoMan: '£40/h' },
+    },
+    {
+      name: 'Sprinter Van',
+      loadSpace: '4.2m long x 1.8m wide x 1.9m high (~14 cubic metres)',
+      bestFor: '2-3 bed properties, larger flat moves, student house moves',
+      pricing: { selfLoading: '£30/h', driverLoading: '£35/h', twoMan: '£50/h' },
+    },
+    {
+      name: 'Luton Van',
+      loadSpace: '4.5m long x 2.2m wide x 2.0m high (~20 cubic metres)',
+      bestFor: '3-4 bed houses, full house removals, large volume moves',
+      pricing: { selfLoading: '£40/h', driverLoading: '£45/h', twoMan: '£60/h' },
+    },
+  ],
+} as const;

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroInner from '../../components/sections/HeroInner.astro';
+import LocationGrid from '../../components/sections/LocationGrid.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import Section from '../../components/ui/Section.astro';
+import Container from '../../components/ui/Container.astro';
+import { locations } from '../../data/locations';
+
+const leedsDistricts = locations.filter(l =>
+  ['leeds-city-centre','headingley','hyde-park-leeds','chapel-allerton','morley','horsforth','armley','garforth'].includes(l.slug)
+);
+const widerArea = locations.filter(l =>
+  ['bradford','wakefield','dewsbury','huddersfield','halifax','harrogate','york'].includes(l.slug)
+);
+---
+
+<BaseLayout
+  title="Areas We Cover | Man With A Van Leeds"
+  description="Man With A Van Leeds covers all Leeds districts and surrounding West Yorkshire towns. Find your area and get a fixed-price quote for removals, man and van, student moves and more."
+  canonical="https://manwithavanleeds.co.uk/locations"
+>
+  <HeroInner
+    title="Areas We Cover"
+    subtitle="We serve all Leeds districts and the wider West Yorkshire and North Yorkshire region. Local knowledge means no wasted time finding parking or navigating one-way streets."
+    breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Areas' }]}
+  />
+
+  <Section>
+    <Container>
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-neutral-900 font-heading mb-2">Leeds Districts</h2>
+        <p class="text-neutral-600 mb-8">All LS postcodes and Leeds city centre suburbs covered — we know the back streets, the CPZ zones, and which terraced streets fit a Luton van.</p>
+        <LocationGrid locations={leedsDistricts} />
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-neutral-900 font-heading mb-2">Wider West Yorkshire &amp; Beyond</h2>
+        <p class="text-neutral-600 mb-8">We also serve Bradford, Wakefield, Huddersfield, Halifax, Dewsbury, Harrogate and York — great coverage for both local and longer-distance moves.</p>
+        <LocationGrid locations={widerArea} />
+      </div>
+    </Container>
+  </Section>
+
+  <!-- Coverage Map Info -->
+  <Section class="bg-neutral-50">
+    <Container>
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-neutral-900 font-heading">Not Listed? We Still Might Cover You</h2>
+        <p class="mt-4 text-neutral-600">
+          We cover a wide radius around Leeds and are happy to travel to areas not listed here for larger jobs. If you're moving to or from somewhere in West Yorkshire, North Yorkshire, or planning a long-distance move, get in touch and we'll confirm availability and pricing.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+            Check Your Area
+          </a>
+          <a href="/routes" class="border border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-3 px-6 rounded-lg transition-colors">
+            Long-Distance Routes
+          </a>
+        </div>
+      </div>
+    </Container>
+  </Section>
+
+  <CTASection />
+</BaseLayout>
