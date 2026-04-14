@@ -50,6 +50,9 @@ export const siteConfig = {
     { title: 'Price Match Guarantee', description: 'We match any comparable like-for-like written quote.' },
     { title: 'Local Leeds Knowledge', description: 'We know every part of Leeds. No delays, no confusion about access or parking.' },
   ],
+  affiliateBase: 'https://www.anyvan.com/instant-prices/furniture/listing-items?credit-code=FurnPKing5481n3320&utm_source=manwithavanleeds&utm_medium=organic',
+  ga4Id: 'G-HK9Z2HPGRS',
+  citySlug: 'leeds',
   vanFleet: [
     {
       name: 'Long Wheelbase (LWB) Van',

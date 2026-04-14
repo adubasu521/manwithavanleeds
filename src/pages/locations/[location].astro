@@ -12,6 +12,7 @@ import Container from '../../components/ui/Container.astro';
 import Badge from '../../components/ui/Badge.astro';
 import { locations, getLocationBySlug, getNeighboringLocations } from '../../data/locations';
 import { services } from '../../data/services';
+import { affiliateUrl } from '../../utils/affiliate';
 
 export async function getStaticPaths() {
   return locations.map((location) => ({
@@ -190,7 +191,7 @@ const locationFaqs = [
                 </div>
               )}
             </dl>
-            <a href="/contact" class="mt-5 block w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-sm">
+            <a href={affiliateUrl(location.slug)} target="_blank" rel="sponsored" onclick={`gtag('event','cta_click',{'button_position':'quote_box','location':'${location.name}'})`} class="mt-5 block w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-sm">
               Get a Quote for {location.name}
             </a>
           </div>
@@ -226,5 +227,5 @@ const locationFaqs = [
     </Section>
   )}
 
-  <CTASection />
+  <CTASection ctaHref={affiliateUrl(location.slug)} />
 </BaseLayout>

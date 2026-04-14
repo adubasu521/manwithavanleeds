@@ -1,15 +1,18 @@
 ---
 import Button from '../ui/Button.astro';
 import { siteConfig } from '../../data/site';
+import { affiliateUrl } from '../../utils/affiliate';
 
 interface Props {
   heading?: string;
   subtitle?: string;
+  ctaHref?: string;
 }
 
 const {
   heading = 'Ready to Book Your Move?',
   subtitle = `Get a free, fixed-price quote from Leeds' most reliable man and van service. Call us today or fill out our online form.`,
+  ctaHref = affiliateUrl(),
 } = Astro.props;
 ---
 
@@ -18,7 +21,7 @@ const {
     <h2 class="text-3xl font-bold text-white font-heading">{heading}</h2>
     <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto">{subtitle}</p>
     <div class="mt-8 flex flex-wrap justify-center gap-4">
-      <Button href="/contact" variant="white" size="lg">Get a Free Quote</Button>
+      <Button href={ctaHref} variant="white" size="lg" target="_blank" rel="sponsored" onclick="gtag('event','cta_click',{'button_position':'bottom_cta'})">Get a Free Quote</Button>
       <Button href={`tel:${siteConfig.phoneTel}`} variant="outline" size="lg" class="border-white text-white hover:bg-white hover:text-primary-600">
         Call {siteConfig.phoneDisplay}
       </Button>

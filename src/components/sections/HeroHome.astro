@@ -1,6 +1,7 @@
 ---
 import Button from '../ui/Button.astro';
 import { siteConfig } from '../../data/site';
+import { affiliateUrl } from '../../utils/affiliate';
 ---
 
 <section data-hero class="relative min-h-[600px] lg:min-h-[80vh] flex items-center">
@@ -27,7 +28,7 @@ import { siteConfig } from '../../data/site';
         Local moves, house removals, student moves, and furniture delivery across Leeds and West Yorkshire. Fixed-price quotes, fully insured, no surprises.
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
-        <Button href="/contact" variant="primary" size="lg">Get a Free Quote</Button>
+        <Button href={affiliateUrl()} variant="primary" size="lg" target="_blank" rel="sponsored" onclick="gtag('event','cta_click',{'button_position':'hero_primary','service':'homepage'})">Get a Free Quote</Button>
         <Button href="/services" variant="ghost" size="lg" class="text-white hover:bg-white/10">
           Our Services
         </Button>

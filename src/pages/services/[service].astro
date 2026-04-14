@@ -11,6 +11,7 @@ import Container from '../../components/ui/Container.astro';
 import Badge from '../../components/ui/Badge.astro';
 import { services, getServiceBySlug, getRelatedServices } from '../../data/services';
 import { siteConfig } from '../../data/site';
+import { affiliateUrl } from '../../utils/affiliate';
 
 export async function getStaticPaths() {
   return services.map((service) => ({
@@ -116,7 +117,7 @@ const vanMap: Record<string, string> = {
             <h3 class="text-lg font-bold text-primary-900 font-heading mb-3">Pricing</h3>
             <div class="text-2xl font-bold text-primary-700">{service.priceRange}</div>
             <p class="mt-2 text-sm text-primary-600">Fixed-price quotes — no hidden extras.</p>
-            <a href="/contact" class="mt-4 block w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-sm">
+            <a href={affiliateUrl(service.slug)} target="_blank" rel="sponsored" onclick={`gtag('event','cta_click',{'button_position':'quote_box','service':'${service.name}'})`} class="mt-4 block w-full text-center bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-sm">
               Get a Free Quote
             </a>
             <a href={`tel:${siteConfig.phoneTel}`} class="mt-2 block w-full text-center border border-primary-400 text-primary-700 hover:bg-primary-100 font-semibold py-3 px-4 rounded-lg transition-colors text-sm">
@@ -164,5 +165,5 @@ const vanMap: Record<string, string> = {
     </Section>
   )}
 
-  <CTASection />
+  <CTASection ctaHref={affiliateUrl(service.slug)} />
 </BaseLayout>

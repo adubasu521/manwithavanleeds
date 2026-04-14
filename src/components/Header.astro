@@ -2,6 +2,7 @@
 import { siteConfig } from '../data/site';
 import { services } from '../data/services';
 import { locations } from '../data/locations';
+import { affiliateUrl } from '../utils/affiliate';
 ---
 
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-primary-800 shadow-lg">
@@ -69,7 +70,7 @@ import { locations } from '../data/locations';
         <a href="/routes" class="text-white font-medium transition-colors duration-200 hover:text-primary-200">Routes</a>
         <a href="/about" class="text-white font-medium transition-colors duration-200 hover:text-primary-200">About</a>
         <a href="/blog" class="text-white font-medium transition-colors duration-200 hover:text-primary-200">Blog</a>
-        <a href="/contact" class="inline-flex items-center px-5 py-2 bg-secondary-500 text-white font-semibold rounded-md hover:bg-secondary-600 hover:shadow-md transition-all duration-150 text-sm">
+        <a href={affiliateUrl()} target="_blank" rel="sponsored" onclick="gtag('event','cta_click',{'button_position':'header'})" class="inline-flex items-center px-5 py-2 bg-secondary-500 text-white font-semibold rounded-md hover:bg-secondary-600 hover:shadow-md transition-all duration-150 text-sm">
           Get a Free Quote
         </a>
       </nav>
@@ -131,7 +132,10 @@ import { locations } from '../data/locations';
 <!-- Mobile Sticky CTA (bottom of screen, mobile only) -->
 <div class="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white border-t border-neutral-200 shadow-lg px-4 py-3 flex gap-3">
   <a
-    href="/contact"
+    href={affiliateUrl()}
+    target="_blank"
+    rel="sponsored"
+    onclick="gtag('event','cta_click',{'button_position':'header_mobile'})"
     class="flex-1 flex items-center justify-center gap-2 bg-secondary-500 hover:bg-secondary-600 text-white font-semibold rounded-lg py-3 text-sm transition-colors"
   >
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
