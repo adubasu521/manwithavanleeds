@@ -10,6 +10,7 @@ export interface BlogPost {
   image: string;
   tags: string[];
   relatedServices: string[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -24,6 +25,24 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog/man-with-van-cost-leeds.webp',
     tags: ['pricing', 'man and van', 'Leeds'],
     relatedServices: ['man-and-van-leeds', 'house-removals-leeds'],
+    faqs: [
+      {
+        question: 'Is a fixed price better than an hourly rate for a Leeds man and van?',
+        answer: 'For most house moves in Leeds, a fixed price is better — you know exactly what you\'ll pay before the day and there\'s no risk of the job running over. Hourly rates suit jobs with uncertain scope, like clearances where you\'re not sure how much there is. We offer fixed prices for all bookings.',
+      },
+      {
+        question: 'What affects the cost of a man and van in Leeds?',
+        answer: 'The main factors are distance (local Leeds move vs long-distance), van size (LWB, Sprinter, or Luton), whether you need one or two movers, access conditions (stairs, parking distance, lifts), and the total volume of items. We ask about all of these when building your quote.',
+      },
+      {
+        question: 'Do I need to tip my removal team in Leeds?',
+        answer: 'Tipping is not expected but is always appreciated for a job well done. If your team worked hard, stayed late, or tackled a particularly tricky access situation, a tip of £10–£20 per person is a generous gesture — though entirely optional.',
+      },
+      {
+        question: 'What happens if I need to cancel or change my moving date?',
+        answer: 'We ask for as much notice as possible if you need to cancel or reschedule. Cancellations with more than 48 hours\' notice are generally free of charge. For last-minute cancellations, a small fee may apply to cover the reserved van slot. We\'ll always try to rearrange rather than cancel where possible.',
+      },
+    ],
     content: `
 <p>One of the most common questions we get asked is: "how much does a man with a van actually cost in Leeds?" The honest answer is that it depends on a few key factors — but in this guide we'll break down exactly what those factors are and give you real price ranges so you can budget accurately.</p>
 
@@ -100,6 +119,24 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog/student-moving-checklist-leeds.webp',
     tags: ['student moves', 'checklist', 'Leeds', 'Headingley'],
     relatedServices: ['student-moves-leeds', 'man-and-van-leeds'],
+    faqs: [
+      {
+        question: 'When should I book a van for a student move in Leeds?',
+        answer: 'Book as early as possible — ideally 4–6 weeks ahead for late June/early July and September moves. These are the two busiest periods in Leeds, particularly around Headingley and Hyde Park. Leaving it to the week before often means limited availability and higher prices.',
+      },
+      {
+        question: 'How much will fit in a man and van for a student room move in Leeds?',
+        answer: 'A standard student room typically fits in an LWB van — that\'s a single or double bed frame and mattress, a wardrobe, a desk and chair, a chest of drawers, and 15–25 boxes. If you have a lot of kitchen items or shared furniture, a Sprinter van gives you more room. We\'ll confirm the right size when you book.',
+      },
+      {
+        question: 'Do you offer student discounts on Leeds moves?',
+        answer: 'We keep our prices competitive for student moves year-round, and our smaller LWB van option is specifically priced to suit single-room moves. Get a free quote and mention you\'re a student — we\'ll make sure you\'re on the right van size and price.',
+      },
+      {
+        question: 'Can you help with short-term storage between Leeds tenancies?',
+        answer: 'If there\'s a gap between your old tenancy ending and your new one starting, we can advise on short-term storage options in Leeds. We work with several local storage facilities and can transport items directly to storage and then to your new address when it\'s ready.',
+      },
+    ],
     content: `
 <p>Moving house as a student in Leeds happens at least once a year — and often more. Whether you're moving from halls into your first student house, shuffling between Headingley addresses, or heading home for the summer, a bit of organisation makes the whole process much less stressful. Here's our complete checklist.</p>
 
@@ -169,6 +206,24 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog/leeds-terraced-house-guide.webp',
     tags: ['house removals', 'Leeds terraces', 'local knowledge'],
     relatedServices: ['house-removals-leeds', 'man-and-van-leeds', 'packing-service-leeds'],
+    faqs: [
+      {
+        question: 'How do you move a sofa through a narrow Leeds terrace front door?',
+        answer: 'The most common approach is to remove the sofa legs and angle it through on its end. If the sofa has removable arms, taking those off first gives you extra clearance. For sofas that genuinely won\'t fit, some go through a ground-floor window with the sash removed. Experienced Leeds removers know these techniques well — always mention narrow access when booking.',
+      },
+      {
+        question: 'Can I get a parking suspension for my Leeds terrace street on moving day?',
+        answer: 'Yes. You can apply to Leeds City Council for a temporary parking suspension (loading bay) on your street, usually with 5–7 days\' notice. This creates a legal loading zone directly outside your property. We can advise on how to apply, and it\'s well worth doing for busy terrace streets.',
+      },
+      {
+        question: 'How long does it take to move out of a 2-bed Leeds terrace?',
+        answer: 'A typical 2-bed Leeds terrace move takes 3–5 hours with a two-man team — roughly 1.5–2 hours to load, 30–60 minutes to drive (depending on destination), and 1–1.5 hours to unload. Add time for disassembling and reassembling beds and flat-pack furniture. Narrow access, steep stairs, or a high volume of boxes will extend this.',
+      },
+      {
+        question: 'Do I need to disassemble furniture before the removal team arrives?',
+        answer: 'It helps significantly. Bed frames, flat-pack wardrobes, and large desks should ideally be disassembled before the team arrives — this speeds up the job and reduces the risk of damage on tight staircase turns. If you\'re not sure what to take apart, our team can advise or assist with disassembly as part of the booking.',
+      },
+    ],
     content: `
 <p>If you've lived in Leeds for any length of time, you'll know the city's signature housing type: the Victorian back-to-back terrace. Built in the late 19th century to house workers in the mills and factories, these properties now make up a significant proportion of Leeds' housing stock — particularly in areas like Headingley, Hyde Park, Armley, Beeston, and Chapel Allerton.</p>
 
@@ -221,6 +276,24 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog/ikea-leeds-delivery-guide.webp',
     tags: ['IKEA delivery', 'Leeds', 'furniture delivery'],
     relatedServices: ['ikea-delivery-leeds', 'furniture-delivery-leeds'],
+    faqs: [
+      {
+        question: 'Is using a local van cheaper than IKEA\'s own delivery service in Leeds?',
+        answer: 'For smaller orders, a local van is often comparable in price to IKEA\'s delivery — and significantly better value because we carry items into the room of your choice, including upstairs, which IKEA\'s service does not. For larger orders (full bedroom or kitchen sets), a local van is usually cheaper and more flexible on timing.',
+      },
+      {
+        question: 'Can you collect from IKEA Leeds and deliver the same day?',
+        answer: 'Yes, subject to availability. We can collect from IKEA Leeds in Holbeck and deliver to any Leeds address on the same day. Book in advance and provide your IKEA order reference number so collection is smooth. Same-day bookings are possible but we recommend booking at least 24–48 hours ahead.',
+      },
+      {
+        question: 'Do you assemble IKEA furniture after delivery?',
+        answer: 'Yes. We offer IKEA assembly as an add-on to delivery. Common jobs include PAX wardrobe systems (2–3 hours for a full set), MALM or BRIMNES bed frames (45–60 minutes), and KALLAX shelving units (around an hour). Assembly is quoted per item and confirmed when you book.',
+      },
+      {
+        question: 'What van size do I need for an IKEA delivery in Leeds?',
+        answer: 'An LWB van handles small to medium orders (a single bedroom set or a sofa). A Sprinter is right for a full bedroom plus living room furniture. A Luton is needed for full-house IKEA orders or kitchen installations. If you\'re unsure, share your order list with us and we\'ll recommend the right van.',
+      },
+    ],
     content: `
 <p>Leeds has a large IKEA store in the Holbeck area — and whether you're a student furnishing a new house, a professional kitting out a flat, or a family buying a full kitchen, getting your purchases home involves some logistical thinking. This guide covers everything you need to know about IKEA Leeds delivery.</p>
 
@@ -290,6 +363,24 @@ export const blogPosts: BlogPost[] = [
     image: '/images/blog/leeds-to-london-moving-guide.webp',
     tags: ['long-distance removals', 'Leeds to London', 'moving guide'],
     relatedServices: ['long-distance-removals-leeds', 'house-removals-leeds'],
+    faqs: [
+      {
+        question: 'How long does a Leeds to London removal take?',
+        answer: 'The drive from Leeds to London is typically 3.5–4 hours without traffic. On a good day with a 7am departure, you can be in London by 11am–midday. Factor in 1.5–2 hours loading in Leeds and 1.5–2 hours unloading in London, so the full job takes 7–9 hours. Avoid Friday departures — M25 traffic can add 1–2 hours.',
+      },
+      {
+        question: 'How much does it cost to move from Leeds to London?',
+        answer: 'Leeds to London removal costs depend on how much you\'re moving: an LWB van (studio or single room) starts from £350–450; a Sprinter (1–2 bed flat) from £500–650; a Luton with two-man team (2–3 bed house) from £700–900. These are fixed prices with no fuel surcharges, no congestion charge extras, and no hidden fees.',
+      },
+      {
+        question: 'Should I move everything from Leeds to London or put some in storage?',
+        answer: 'London flats are often smaller than equivalent Leeds properties at similar rent. Before loading everything into the van, consider whether large items like corner sofas, full dining tables, or chest freezers will fit in your new space. It\'s better to sell oversized furniture in Leeds than pay to move it and then get rid of it in London.',
+      },
+      {
+        question: 'What should I book first when planning a Leeds to London move?',
+        answer: 'Book your removal van first — this fixes your moving date and everything else follows from that. Then notify your landlord or solicitor, arrange utilities transfer, update your address with your bank and employer, and organise parking at the London end (a loading bay suspension if needed). Give yourself at least 4–6 weeks to do this comfortably.',
+      },
+    ],
     content: `
 <p>Moving from Leeds to London is one of the most common long-distance relocations in the UK — and one we do on a weekly basis. Whether you're moving for work, a relationship, or a lifestyle change, the Leeds-to-London move has specific logistics worth planning carefully. This guide covers everything from costs to timing to what to expect when you arrive in London.</p>
 

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroInner from '../../components/sections/HeroInner.astro';
 import CTASection from '../../components/sections/CTASection.astro';
 import SchemaArticle from '../../components/seo/SchemaArticle.astro';
+import SchemaFAQ from '../../components/seo/SchemaFAQ.astro';
 import Section from '../../components/ui/Section.astro';
 import Container from '../../components/ui/Container.astro';
 import { blogPosts } from '../../data/blog-posts';
@@ -35,6 +36,9 @@ const relatedServices = post.relatedServices.map((s) => getServiceBySlug(s)).fil
     image={post.image}
     slot="head"
   />
+  {post.faqs && post.faqs.length > 0 && (
+    <SchemaFAQ faqs={post.faqs} slot="head" />
+  )}
 
   <HeroInner
     title={post.title}

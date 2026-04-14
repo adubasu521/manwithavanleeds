@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SchemaFAQ from '../components/seo/SchemaFAQ.astro';
 import HeroHome from '../components/sections/HeroHome.astro';
 import ServiceGrid from '../components/sections/ServiceGrid.astro';
 import LocationGrid from '../components/sections/LocationGrid.astro';
@@ -29,6 +30,29 @@ const testimonials = [
   { quote: "Used them twice now for student moves in Hyde Park. Friendly, fast, and great value compared to other quotes I got. The van was huge — everything fit in one trip.", author: "Sophie M.", location: "Hyde Park, Leeds", rating: 5 },
   { quote: "Moved from Leeds to Bradford in under 3 hours. Communication was excellent from start to finish. Will absolutely use again and have already recommended to friends.", author: "Raj P.", location: "Bradford", rating: 5 },
 ];
+
+const homepageFaqs = [
+  {
+    question: 'How much does a man with a van cost in Leeds?',
+    answer: 'Man and van prices in Leeds start from around £50–£80 for small local jobs and £120–£250 for a typical one-bedroom flat move. We provide fixed-price quotes upfront — no hourly surprises. Use our free quote tool to get an instant price for your specific move.',
+  },
+  {
+    question: 'Are you fully insured for house removals in Leeds?',
+    answer: 'Yes. We carry full goods-in-transit insurance and public liability insurance on every job. Your belongings are covered from the moment we load the van to the moment they arrive at your new address.',
+  },
+  {
+    question: 'Do you offer same-day or next-day moves in Leeds?',
+    answer: 'We regularly handle same-day and next-day bookings across Leeds, subject to van and crew availability. Smaller jobs like single-item collections or one-bedroom flat moves are easiest to arrange at short notice. For larger removals, we recommend booking a few days ahead.',
+  },
+  {
+    question: 'What areas of Leeds do you cover?',
+    answer: 'We cover all Leeds postcodes — LS1 through LS29 — including Headingley, Hyde Park, Chapel Allerton, Meanwood, Morley, Horsforth, and the city centre. We also serve Bradford, Wakefield, Harrogate, York, and the wider West Yorkshire region.',
+  },
+  {
+    question: 'What is included in your man and van service?',
+    answer: 'Our standard service includes a van and an experienced driver/mover. We can also provide a two-man crew for heavier items, furniture disassembly and reassembly, and packing materials on request. All jobs come with a fixed price agreed before we start.',
+  },
+];
 ---
 
 <BaseLayout
@@ -36,6 +60,7 @@ const testimonials = [
   description="Leeds' most trusted man and van service. Fixed-price quotes for house removals, student moves, furniture delivery and more across Leeds and West Yorkshire. Fully insured, 7 days a week."
   canonical="https://manwithavanleeds.co.uk"
 >
+  <SchemaFAQ faqs={homepageFaqs} slot="head" />
   <HeroHome />
 
   <!-- USP Bar -->
