@@ -7,6 +7,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: 'https://manwithavanleeds.co.uk',
   output: 'static',
+  trailingSlash: 'always',
   adapter: cloudflare(),
   integrations: [sitemap(), react()],
   vite: {

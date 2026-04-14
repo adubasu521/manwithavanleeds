@@ -97,6 +97,12 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* Animations */
+  --animate-fade-up: fadeUp 0.6s ease-out both;
+  --animate-fade-in: fadeIn 0.6s ease-out both;
+  --animate-slide-down: slideDown 0.4s ease-out both;
+  --animate-scale-in: scaleIn 0.5s ease-out both;
 }
 
 /* Base layer: apply design tokens globally */
@@ -109,5 +115,39 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@utility stagger-1 { animation-delay: 0.05s; }
+@utility stagger-2 { animation-delay: 0.10s; }
+@utility stagger-3 { animation-delay: 0.15s; }
+@utility stagger-4 { animation-delay: 0.20s; }
+@utility stagger-5 { animation-delay: 0.25s; }
+@utility stagger-6 { animation-delay: 0.30s; }
+
+@layer components {
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
   }
 }
